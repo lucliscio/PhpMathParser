@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PhpMathParser Ver.1.2 - Documentation</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="stylesheet.css" type="text/css" />
+</head>
+
+<body>
+
+<div id="container">
+	<div id="header">
+		<h2>Documentation</h2>
+		<h1><a href="#">PhpMathParser<strong> 1.2</strong></a></h1>
+		
+	</div>
+
+	<div id="navigation">
+		<ul>
+			<li><a href="#">Description</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="license_it.html">License</a></li>
+			<li><a href="mailto:phpmathparser@modeltreno.cjb.net">Email me</a></li>
+		</ul>
+	</div>
+
+	<div id="content">
+
+		<h1>Description</h1>
+		<h2></h2>
+		<p>PhpMathParser è una classe php che traduce, in modo naive, espressioni matematiche in istruzioni php. In questa versione, in oltre, è possibile far valutare le funzioni direttamente a PhpMathParser cosa che rende questo tool più semplice utilizzare. Questo semplice programmino può essere usato per diverse aplicazioni io, ad esempio ho usato PhpMathParser per 
+		la realizzazione di un tool per lo studio di funzioni.</p>
+
+		<div class="post_info">
+		</div>
+
+		<h1>Usage<a name="usage"></a></h1>
+		<h2>Un piccolo esempio d'uso</h2>
+		<p>Utilizzare PhpMathParser è molto semplice:
+				<ol>
+					<li> Includiamo la classe: <br><pre>include "parser.class.php";</pre></li>
+					<li> Instanziamo e usiamo la classe: <br>
+						<pre>$p = new phpmathparser("x^(2x)");
+							<br>$i = 10;
+							<br>$y=$p->evalfun($i);
+							<br>echo "La funzione ".$p-get_fun();
+							<br>echo " in x = 10 vale ".$y;
+						</pre>
+		oppure:
+						<pre>$p = new phpmathparser("");
+							<br>$p->set_fun("x^(2x)");
+							<br>$i = 10;
+							<br>$y=$p->evalfun($i);
+							<br>echo "La funzione ".$p-get_fun();
+							<br>echo " in x = 10 vale ".$y;
+						 </pre>
+							
+					</li>
+				</ol>
+				<h2>Elenco dei metodi disponibili</h2>
+				
+					<ol>
+						<li><h3>set_fun($fun):</h3>Questo metodo viene usato per modificare la fuzione all'interno di un oggetto PhpMathParser
+						</li>
+						<li><h3>get_pfun():</h3>Questo metodo viene usato per ottenere la versione php della funzione contenuta nell'oggeto PhpMathParser. Il faormato restituito è <i>string</i>.<br />
+							Per poter eseguire la stringa restituita da questo metodo si può far uso del comando <i>eval</i> nel modo seguente:
+							<br />
+							<pre>$i = 2; //$i corrisponde alla x della funzione 
+								<br>eval("\$y=".$this->get_pfun().";");
+							</pre>	
+						</li>
+						<li><h3>get_fun():</h3>Questo metodo restituisce la funzione contenuta nell'oggetto PhpMathParser</li>
+						<li><h3>evalfun($x):</h3>Questo metodo, persente per la prima volta in PhpMathParser, permette di calcolare il valore della fuzione in modo più semplice rispetto a quanto sia necessario fare se si usa il metodo <i>get_pfun</i>. Questo metodo può essere usato per conoscere li valore della funzione sia in un solo punto che in più punti
+							la sintassi è riportata qui di seguito:
+							<pre>/* Voglio sapere il falore della funzione
+									<br>in x = 10 
+									<br>$p è un oggetto di tipo PhpMathParser*/
+									<br>
+									<br>$y = $p->evalfun(10); 								
+							</pre>
+							<pre>/* Voglio sapere il falore della funzione
+									<br>in x = 10, 15, 25, 30 
+									<br>$p è un oggetto di tipo PhpMathParser*/
+									<br>
+									<br>$x = array(10, 15, 25, 30);
+									<br>$y = $p->evalfun($x);//In questo caso $y è un array								
+							</pre>							
+			</ol>	
+				<h2>Regole per una cerretta composizione delle funzioni</h2>
+<ol>
+		<li >Le funzioni vanno scritte usando solo lettere minuscole
+		</li>
+		<li>Per una corretta interpretazine delle funzioni:
+			<ol >
+				<li>Gli esponenti composti da più caratteri devono essere racchiusi tra parentesi
+					<ol>
+
+						<li>Ex.: x^(12), x^(log(x+3))</li>
+
+					</ol>
+				</li>
+				<li>Gli argomenti delle funzioni trigonometriche e della divisione vanno inseriti tra parentesi
+					<ol>
+						<li>Ex.: cos(x), atan(x), tan(x^2+10x), (x)/(x^2-2)</li>
+					</ol>
+				</li>
+
+			</ol>
+
+		</li>
+		<li >Note sul logaritmo:
+			<ol >
+				<li>log(x) => logaritmo naturale di x</li>
+				<li>log10(x) o log(x,10) => logaritmo in base 10 di x</li>
+				<li>log(x,b) => logaritmo in base b di x</li>
+				<li>Ex.: log((x^2),10), log((x^2+5x+2),5), log10((x^2))</li>
+
+			</ol>
+		</li>
+		<li>Note sulla radice:
+			<ol >
+				<li>Questo tool supporta solo la redice quadrata la sintassi è: r(x)</li>
+				<li>Ex.: r(x^2), r(x^(5x))</li>
+			</ol>
+		</li>
+
+		<li>Nomenclatura delle funzioni trigonometriche supportate: 
+			<ol >
+				<li>cos => coseno</li>
+				<li>sen => seno</li>
+				<li>tan => tangente</li>
+				<li>acos => arcocoseno</li>
+				<li>asen => arcoseno</li>
+
+				<li>atan => arcotangente</li>
+				<li>cosh => coseno iperbolico</li>
+				<li>senh => seno iperbolico</li>
+				<li>tanh => tangente iperbolica</li>		
+			</ol>
+		</li>	
+	</ol></p>
+		<div class="post_info">
+		</div>
+
+	
+
+		<div id="footer">
+			<p>PhpMathParser Guaid Ver.2.0<br />
+			Template design by <a href="http://www.iseeyou-designs.com">I See You - Designs</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML Strict!</a> valid.</p>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
