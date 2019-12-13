@@ -1,0 +1,211 @@
+/* CSS Document by JM (ISeeYou-Designs.com) */
+
+body {
+	background-color:#fff;
+	font-family:"Trebuchet MS",arial,sans-serif;
+	font-size:62.5%;
+	color:#777;
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration:none;
+	color:#222;
+}
+a:hover {
+	color:#c00;
+}
+acronym {
+	cursor:help;
+	border-bottom:1px dotted #ddd;
+}
+
+
+
+#container {
+	font-size:1.2em;
+	width:550px;
+	margin:0 auto;
+	border-right:1px solid #a60;
+	border-left:1px solid #a60;
+}
+
+
+
+#header {
+	color:#444;
+	margin:0;
+	padding:10px;
+	background:#fff url(matematica_logo.gif) no-repeat bottom right;
+}
+#header h1 {
+	font-family:"Trebuchet MS",arial,sans-serif;
+	font-size:2em;
+	color:#333;
+	margin:0;
+	font-weight:normal;
+}
+#header h1 strong {
+	color:#c00;
+}
+
+#header h2 {
+	margin:140px 0 0 0;
+	font-size:1em;
+	font-weight:normal;
+	color:#999;
+}
+
+
+
+#navigation {
+	text-align:right;
+	margin:10px 10px 10px auto;
+}
+
+#navigation {
+	margin:0 10px 0 0;
+	padding:0;
+}
+
+#navigation li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	display:inline;
+}
+
+#navigation li a {
+	padding:5px 5px 2px 5px;
+	margin:0 1px 0 1px;
+	color:#666;
+	text-decoration:none;
+	font-weight:bold;
+	border-bottom:1px solid #c00;
+}
+
+#navigation li a:hover {
+	color:#C00;
+	border-bottom:1px solid #ddd;
+}
+
+
+
+#content {
+	margin:20px 0 20px 10px;
+	padding:0;
+}
+#content p {
+	padding:2px 20px;
+	text-align:justify;
+	text-indent:0.5cm;
+	line-height:1.8em;
+	text-align: justify;
+}
+#content h1 {
+	display:block;
+	margin:50px 0 0 10px;
+	padding:0;
+	font-family:"Trebuchet MS",arial,sans-serif;
+	font-size:1.8em;
+	color:#c00;
+	border-color:#ddd;
+	border-style:solid;
+	border-width:0 0 1px 0;
+}
+#content h2 {
+	display:block;
+	margin:20px 0 0 30px;
+	padding:0;
+	font-family:"Trebuchet MS",arial,sans-serif;
+	font-size:1.1em;
+	letter-spacing:2px;
+	color:#444;
+	border-color:#c00;
+	border-style:solid;
+	border-width:0 0 1px 0;
+}
+#content .post_info {
+	text-align:right;
+	margin:0 25px 5px 25px;
+	padding:2px;
+	font-size:0.8em;
+	font-family:arial,sans-serif;
+	color:#aaa;
+	line-height:0.9em;
+	word-spacing:1px;
+	border-top:1px solid #ddd;
+}
+#content .post_info a {
+	text-transform:uppercase;
+}
+#content blockquote {
+	margin:10px 60px;
+	padding:5px;
+	font-family:"Trebuchet MS",arial,sans-serif;
+	font-size:0.9em;
+	color:#444;
+	border:1px solid #ddd;
+	background-color:#eee;
+}
+#content blockquote p {
+	margin:0;
+	padding:0;
+	text-indent:0;
+}
+#content pre {
+	margin:10px 60px;
+	padding:5px;
+	color:#444;
+	border:1px solid #eee;
+	background-color:#fafafa;
+	font-size: larger;
+}
+
+#content code {
+	margin:10px 60px;
+	padding: 5px;
+	color:#444;
+	border:1px solid #eee;
+	background-color:#fafafa;
+	font-size: larger;
+}
+
+#content ul {
+	margin-left:30px;
+	list-style:upper-roman outside;
+	
+}
+
+#content li {
+	padding:3px;
+	text-align: justify;	
+}
+
+
+
+#footer {
+	font-size:0.9em;
+	font-family:arial,sans-serif;
+	margin:90px 0 20px 0;
+	padding:5px;
+	border-top:1px solid #c00;
+}
+#footer p {
+	text-align:right;
+	line-height:1.1em;
+	color:#bbb;
+	font-size:0.9em;
+	font-family:arial,sans-serif;
+	margin:0;
+	padding:0;
+}
+#footer span {
+	color:#888;
+}
+#footer a {
+	color:#888;
+}
+#footer a:hover {
+	color:#aaa;
+}
